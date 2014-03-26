@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id='nav' class='row'> 
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to "Awesome Store", products_path %></h1>
+          </li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><%= link_to "Browse Products", products_path %></li>
+            <li><%= link_to "Price List" %></li>
+            <li><%= link_to "Contact Us" %></li>
+            <li><%= link_to "Cart" %></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div class='large-8 small-12 columns'><%= yield %></div>
+      <div class='large-4 small-12 columns'>
+        <h2 class='subheader'>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, fugit, reprehenderit, laudantium omnis tempora in necessitatibus unde porro facilis similique maiores quas ea at voluptates voluptatem eaque amet asperiores saepe.</p>
+      </div>
+    </div>
+    
+
+
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
